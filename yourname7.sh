@@ -23,8 +23,8 @@ fi
 cd
 
 # check registered ip
-wget -q -O /etc/imd https://raw.githubusercontent.com/yourname/scriptmunoob/master/daftarip.txt
-wget -q -O daftarip https://raw.githubusercontent.com/yourname/scriptmunoob/master/daftarip.txt
+wget -q -O /etc/imd https://raw.githubusercontent.com/akumasih112/code//master/daftarip.txt
+wget -q -O daftarip https://raw.githubusercontent.com/akumasih112/code/master/daftarip.txt
 if ! grep -w -q $MYIP daftarip; then
 	echo "Maaf, hanya IP terdaftar yang bisa menggunakan script ini!"
 	echo "Hubungi Roziq Yusuf (Whatsapp: 081234054359)"
@@ -62,7 +62,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -q -O /etc/apt/sources.list https://raw.githubusercontent.com/yourname/scriptmunoob/master/sources.list.debian7
+wget -q -O /etc/apt/sources.list https://raw.githubusercontent.com/akumasih112/code/master/sources.list.debian7
 wget "http://www.dotdeb.org/dotdeb.gpg"
 wget "http://www.webmin.com/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
@@ -100,7 +100,7 @@ service vnstat restart
 
 # install screenfetch
 cd
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/screenfetch-dev
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/null/screenfetch-dev
 mv screenfetch-dev /usr/bin/screenfetch-dev
 chmod +x /usr/bin/screenfetch-dev
 echo "clear" >> .profile
@@ -111,11 +111,11 @@ echo "screenfetch-dev" >> .profile
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/nginx.conf
+wget -q -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/akumasih112/code/master/null/nginx.conf
 mkdir -p /home/fns/public_html
 echo "<pre>Default Webpage</pre><br/><pre>Auto Installer Script Premium - ForNesia Community</pre>" > /home/fns/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/fns/public_html/info.php
-wget -q -O /etc/nginx/conf.d/vps.conf https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/vps.conf
+wget -q -O /etc/nginx/conf.d/vps.conf https://raw.githubusercontent.com/akumasih112/code/master/null/vps.conf
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 service php5-fpm restart
 service nginx restart
@@ -123,10 +123,10 @@ service nginx restart
 # install openvpn
 cd
 # apt-get -y install openvpn
-# wget -q -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/yourname/scriptmunoob/master/openvpn-debian.tar"
+# wget -q -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/akumasih112/code/master/openvpn-debian.tar"
 # cd /etc/openvpn/
 # tar xf openvpn.tar
-# wget -q -O /etc/openvpn/1194.conf https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/1194.conf
+# wget -q -O /etc/openvpn/1194.conf https://raw.githubusercontent.com/akumasih112/code/master/null/1194.conf
 # service openvpn restart
 # sysctl -w net.ipv4.ip_forward=1
 # sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
@@ -138,7 +138,7 @@ cd
 
 #configure openvpn client config
 # cd /etc/openvpn/
-# wget -q -O /etc/openvpn/1194-client.ovpn https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/1194-client.conf
+# wget -q -O /etc/openvpn/1194-client.ovpn https://raw.githubusercontent.com/akumasih112/code/master/null/1194-client.conf
 # sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false SMDVPS
@@ -146,9 +146,9 @@ echo "SMDVPS:$PASS" | indonesia
 cd
 
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/yourname/scriptmunoob/master/file/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/akumasih112/code/master/file/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/yourname/scriptmunoob/master/file/badvpn-udpgw64"
+  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/akumasih112/code/master/file/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -156,8 +156,8 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 
 # install mrtg
-wget -q -O /etc/snmp/snmpd.conf https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/snmpd.conf
-wget -q -O /root/mrtg-mem.sh https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/mrtg-mem.sh
+wget -q -O /etc/snmp/snmpd.conf https://raw.githubusercontent.com/akumasih112/code/master/null/snmpd.conf
+wget -q -O /root/mrtg-mem.sh https://raw.githubusercontent.com/akumasih112/code/master/null/mrtg-mem.sh
 chmod +x /root/mrtg-mem.sh
 cd /etc/snmp/
 sed -i 's/TRAPDRUN=no/TRAPDRUN=yes/g' /etc/default/snmpd
@@ -165,7 +165,7 @@ service snmpd restart
 snmpwalk -v 1 -c public localhost 1.3.6.1.4.1.2021.10.1.3.1
 mkdir -p /home/fns/public_html/mrtg
 cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/fns/public_html/mrtg' --output /etc/mrtg.cfg public@localhost
-curl https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/mrtg.conf >> /etc/mrtg.cfg
+curl https://raw.githubusercontent.com/akumasih112/code/master/null/mrtg.conf >> /etc/mrtg.cfg
 sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg.cfg
 sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg.cfg
 indexmaker --output=/home/fns/public_html/mrtg/index.html /etc/mrtg.cfg
@@ -206,7 +206,7 @@ service dropbear restart
 
 # install vnstat gui
 cd /home/fns/public_html/
-wget https://raw.githubusercontent.com/yourname/scriptmunoob/master/file/vnstat_php_frontend-1.5.1.tar.gz
+wget https://raw.githubusercontent.com/akumasih112/code/master/file/vnstat_php_frontend-1.5.1.tar.gz
 tar xf vnstat_php_frontend-1.5.1.tar.gz
 rm vnstat_php_frontend-1.5.1.tar.gz
 mv vnstat_php_frontend-1.5.1 vnstat
@@ -251,7 +251,7 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # install squid3
 apt-get -y install squid3
-wget -q -O /etc/squid3/squid.conf https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/squid3.conf
+wget -q -O /etc/squid3/squid.conf https://raw.githubusercontent.com/akumasih112/code/master/null/squid3.conf
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -275,35 +275,35 @@ cd fornesia87
 make
 
 # install New pptp vpn 
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/addpptp.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/null/addpptp.sh
 
 
 #ADD MENU + Compiler
 
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/menu.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/menu.sh
 dos2unix /root/fornesia87/menu.sh
 
 
 # download script lain + Compile
 
 
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-login.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-renew.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-expired.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-list.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/add-del.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/useradd.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-pass.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/mrtg.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/vnstat.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/dropmon.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-ban.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-unban.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/expiry-change.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/user-limit.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/del-user-expire.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/openvpn.sh
-wget -q https://raw.githubusercontent.com/yourname/scriptmunoob/master/ocs.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-login.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-renew.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-expired.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-list.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/add-del.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/useradd.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-pass.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/mrtg.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/vnstat.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/null/dropmon.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-ban.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-unban.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/expiry-change.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/user-limit.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/freak/del-user-expire.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/openvpn.sh
+wget -q https://raw.githubusercontent.com/akumasih112/code/master/ocs.sh
 
 ./shc -v -r -T -f menu.sh
 ./shc -v -r -T -f addpptp.sh
@@ -348,11 +348,11 @@ cp /root/fornesia87/ocs.sh.x /usr/bin/install-ocs
 
 #Download Lain
 cd
-wget -q -O /usr/bin/welcomeadmin https://raw.githubusercontent.com/yourname/scriptmunoob/master/freak/welcome.sh
-wget -q -O /usr/bin/benchmark https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/bench.sh
+wget -q -O /usr/bin/welcomeadmin https://raw.githubusercontent.com/akumasih112/code/master/freak/welcome.sh
+wget -q -O /usr/bin/benchmark https://raw.githubusercontent.com/akumasih112/code/master/null/bench.sh
 wget -q -O /usr/bin/speedtest https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 wget -q -O /usr/bin/ps-mem https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
-wget -q -O /etc/issue.net https://raw.githubusercontent.com/yourname/scriptmunoob/master/null/banner.html
+wget -q -O /etc/issue.net https://raw.githubusercontent.com/akumasih112/code/master/null/banner.html
 
 
 echo "*/10 * * * * root /usr/bin/user-expired" > /etc/cron.d/user-expired
