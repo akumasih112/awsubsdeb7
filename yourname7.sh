@@ -23,7 +23,7 @@ fi
 cd
 
 # check registered ip
-wget -q -O /etc/imd https://raw.githubusercontent.com/akumasih112/code//master/daftarip.txt
+wget -q -O /etc/imd https://raw.githubusercontent.com/akumasih112/code/master/daftarip.txt
 wget -q -O daftarip https://raw.githubusercontent.com/akumasih112/code/master/daftarip.txt
 if ! grep -w -q $MYIP daftarip; then
 	echo "Maaf, hanya IP terdaftar yang bisa menggunakan script ini!"
