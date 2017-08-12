@@ -11,7 +11,7 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 cd
 
 
-#Copyright Fa'i Smart
+#Copyright Roziq Yusuf
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 echo "                                        "
