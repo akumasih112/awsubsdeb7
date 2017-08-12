@@ -85,7 +85,7 @@ echo "------------------------------------------------"
 
 echo "";
 
-echo "                           Fa'i Smart                       " 
+echo "                           Roziq Yusuf                       " 
 
 
 cd ~/
