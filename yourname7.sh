@@ -130,13 +130,13 @@ cd
 # service openvpn restart
 # sysctl -w net.ipv4.ip_forward=1
 # sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-# wget -q -O /etc/iptables.up.rules https://raw.githubusercontent.com/yourname/scriptnoob/master/null/iptables.up.rules
+# wget -q -O /etc/iptables.up.rules https://raw.githubusercontent.com/akumasih112/code/master/null/iptables.up.rules
 # sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 # sed -i $MYIP2 /etc/iptables.up.rules;
 # iptables-restore < /etc/iptables.up.rules
 # service openvpn restart
 
-#configure openvpn client config
+# configure openvpn client config
 # cd /etc/openvpn/
 # wget -q -O /etc/openvpn/1194-client.ovpn https://raw.githubusercontent.com/akumasih112/code/master/null/1194-client.conf
 # sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
@@ -308,7 +308,7 @@ wget -q https://raw.githubusercontent.com/akumasih112/code/master/ocs.sh
 
 ./shc -v -r -T -f menu.sh
 ./shc -v -r -T -f addpptp.sh
-#./shc -v -r -T -f bench-network.sh
+./shc -v -r -T -f bench-network.sh
 ./shc -v -r -T -f user-login.sh
 ./shc -v -r -T -f user-renew.sh
 ./shc -v -r -T -f user-expired.sh
@@ -347,7 +347,7 @@ cp /root/fornesia87/del-user-expire.sh.x /usr/bin/del-user-expired
 cp /root/fornesia87/openvpn.sh.x /usr/bin/install-openvpn
 cp /root/fornesia87/ocs.sh.x /usr/bin/install-ocs
 
-#Download Lain
+# Download Lain
 cd
 wget -q -O /usr/bin/welcomeadmin https://raw.githubusercontent.com/akumasih112/code/master/freak/welcome.sh
 wget -q -O /usr/bin/benchmark https://raw.githubusercontent.com/akumasih112/code/master/null/bench.sh
@@ -396,13 +396,13 @@ service cron restart
 service nginx start
 service php-fpm start
 service vnstat restart
-#service openvpn restart
+service openvpn restart
 service snmpd restart
 service ssh restart
 service dropbear restart
 service fail2ban restart
 service squid3 restart
-#service webmin restart
+service webmin restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 userexpired
