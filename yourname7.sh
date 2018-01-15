@@ -123,7 +123,7 @@ service nginx restart
 # install openvpn
 cd
 # apt-get -y install openvpn
-# wget -q -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/akumasih112/code/master/openvpn-debian.tar"
+# wget -q -O /etc/openvpn/openvpn.tar https://raw.githubusercontent.com/akumasih112/code/master/openvpn-debian.tar
 # cd /etc/openvpn/
 # tar xf openvpn.tar
 # wget -q -O /etc/openvpn/1194.conf https://raw.githubusercontent.com/akumasih112/code/master/null/1194.conf
@@ -132,17 +132,17 @@ cd
 # sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 # wget -q -O /etc/iptables.up.rules https://raw.githubusercontent.com/akumasih112/code/master/null/iptables.up.rules
 # sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-# sed -i $MYIP2 /etc/iptables.up.rules;
+# sed -i $MYIP /etc/iptables.up.rules;
 # iptables-restore < /etc/iptables.up.rules
 # service openvpn restart
 
 # configure openvpn client config
 # cd /etc/openvpn/
 # wget -q -O /etc/openvpn/1194-client.ovpn https://raw.githubusercontent.com/akumasih112/code/master/null/1194-client.conf
-# sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+# sed -i $MYIP /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false SMDVPS
-echo "SMDVPS:$PASS" | indonesia
+echo "$USER:$PASS" | indonesia
 cd
 
 # install badvpn
@@ -176,7 +176,7 @@ cd
 
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 82' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
 sed -i 's/#Banner /etc/issue.net/g' /etc/ssh/sshd_config
 service ssh restart
@@ -185,7 +185,7 @@ service ssh restart
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=442/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
@@ -414,9 +414,9 @@ echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "${LRED}Service${NORMAL}"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
-echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 80"  | tee -a log-install.txt
-echo -e "${LGREEN}Dropbear : ${NORMAL}444, 143"  | tee -a log-install.txt
-echo -e "${LGREEN}Squid3    : ${NORMAL}80, 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
+echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 82, 143"  | tee -a log-install.txt
+echo -e "${LGREEN}Dropbear : ${NORMAL}442, 109, 110"  | tee -a log-install.txt
+echo -e "${LGREEN}Squid3    : ${NORMAL}8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
 echo -e "${LGREEN}badvpn   : ${NORMAL}badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo -e "${LGREEN}PPTP VPN  : ${NORMAL}Create User via Panel Menu"  | tee -a log-install.txt
 echo -e "${LGREEN}nginx    : ${NORMAL}81"  | tee -a log-install.txt
