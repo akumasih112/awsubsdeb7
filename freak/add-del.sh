@@ -68,20 +68,20 @@ else
 
 	echo ""
 	echo "-----------------------------------"
-	echo "Informasi Account SSH"
+	echo "Informasi Akun SSH"
 	echo "-----------------------------------"
 	echo "Host/IP: $MYIP"
 	echo "Username: $USER"
 	echo "Password: $PASS"
-	echo "SSL/TLS Port : 443, 80"
-	echo "Dropbear Port: 22, 444, 3128"
-	echo "OpenSSH Port: 143"
-	echo "Squid Proxy: 8080"
-	echo "OpenVPN (TCP 1194) : http://$MYIP:81/client.ovpn"
-
+	echo "OpenSSH Port: 143, 109, 110"
+	echo "Dropbear Port: 442, 82"
+	echo "SSL/TLS Port: 443, 80"
+	echo "Squid Proxy: 8080, 8000"
+	echo "Config OpenVPN (TCP 1194) : http://$MYIP:81/client.ovpn"
+        echo "-----------------------------------"
 	echo "Masa Aktif sampai: $(date -d "$AKTIF days" +"%d-%m-%Y")"
 	echo "-----------------------------------"
-    echo "Edited By Roziq Yusuf"
+        echo "Script Powered By Owner SamudraSSH"
 	echo ""
 fi
 }
@@ -98,14 +98,14 @@ expire=$(date -d "$AKTIF days" +"%Y-%m-%d")
 
 echo ""
 echo "-----------------------------------------------------------------"
-echo "Data Login:"
+echo "Informasi Akun SSH"
 echo "-----------------------------------------------------------------"
 echo "Host/IP: $MYIP"
 echo "SSL/TLS Port : 443, 80"
-	echo "Dropbear Port: 22, 444, 3128"
-	echo "OpenSSH Port: 143"
-	echo "Squid Proxy: 8080"
-	echo "OpenVPN (TCP 1194) : http://$MYIP:81/client.ovpn"
+	echo "Dropbear Port: 442, 82"
+	echo "OpenSSH Port: 143, 109, 110"
+	echo "Squid Proxy: 8080, 8000"
+	echo "Config OpenVPN (TCP 1194) : http://$MYIP:81/client.ovpn"
 
 for (( i=1; i <= $JUMLAH; i++ ))
 do
