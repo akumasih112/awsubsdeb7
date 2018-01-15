@@ -27,10 +27,10 @@ show_menu(){
 	
 	echo -e "${NUMBER}----------- Selamat Datang di Server - IP: $IP -----------${NORMAL}"
 	echo -e "${NORMAL}==========================================================="
-    echo -e "${LRED}OpenSSH            : ${BLUE}143"
+    echo -e "${LRED}OpenSSH            : ${BLUE}143, 109, 110"
     echo -e "${LRED}SSL/TLS            : ${BLUE}443, 80"
-	echo -e "${LRED}Dropbear           : ${BLUE}22, 444, 3128"
-	echo -e "${LRED}SquidProxy         : ${BLUE}$IP:8080 (limit to IP SSH)"
+	echo -e "${LRED}Dropbear           : ${BLUE}442, 82"
+	echo -e "${LRED}SquidProxy         : ${BLUE}$IP:8080, 8000 (limit to IP SSH)"
 	echo -e "${LRED}badvpn             : ${BLUE}badvpn-udpgw port 7300"
 	echo -e "${LRED}Webmin             : ${BLUE}https://$IP:10000/"
 	echo -e "${LRED}OpenVPN            : ${BLUE}$IP:81/client.ovpn"
