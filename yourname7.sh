@@ -177,8 +177,8 @@ cd
 
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 82' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 3128' /etc/ssh/sshd_config
 sed -i 's/#Banner /etc/issue.net/g' /etc/ssh/sshd_config
 service ssh restart
 
@@ -186,7 +186,7 @@ service ssh restart
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=442/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
