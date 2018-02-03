@@ -14,6 +14,6 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 	BLUE=`echo "\033[0m\033[1;36m"`
 echo
   echo -e "${BLUE}----------- Hai Admin, Selamat datang di Server $MYIP -----------${NORMAL}"
-        echo -e "   Jika anda butuh bantuan silahkan contact Roziq Yusuf (Whatsapp: 081234054359)    "
+        echo -e "   Jika anda ada keluhan silahkan contact Roziq Yusuf (Whatsapp: 081234054359)    "
 echo -e "${NORMAL}---------- Silakan ketik ${LRED}menu ${NORMAL}untuk masuk ke Fitur Menu VPS ----------${NORMAL}"
 echo ""
