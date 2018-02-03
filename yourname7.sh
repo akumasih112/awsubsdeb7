@@ -309,7 +309,7 @@ wget -q https://raw.githubusercontent.com/akumasih112/code/master/ocs.sh
 
 ./shc -v -r -T -f menu.sh
 ./shc -v -r -T -f addpptp.sh
-./shc -v -r -T -f bench-network.sh
+#./shc -v -r -T -f bench-network.sh
 ./shc -v -r -T -f user-login.sh
 ./shc -v -r -T -f user-renew.sh
 ./shc -v -r -T -f user-expired.sh
