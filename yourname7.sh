@@ -186,7 +186,7 @@ service ssh restart
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=80/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
@@ -309,7 +309,7 @@ wget -q https://raw.githubusercontent.com/akumasih112/code/master/ocs.sh
 
 ./shc -v -r -T -f menu.sh
 ./shc -v -r -T -f addpptp.sh
-#./shc -v -r -T -f bench-network.sh
+./shc -v -r -T -f bench-network.sh
 ./shc -v -r -T -f user-login.sh
 ./shc -v -r -T -f user-renew.sh
 ./shc -v -r -T -f user-expired.sh
@@ -326,7 +326,6 @@ wget -q https://raw.githubusercontent.com/akumasih112/code/master/ocs.sh
 ./shc -v -r -T -f user-limit.sh
 ./shc -v -r -T -f del-user-expire.sh
 ./shc -v -r -T -f openvpn.sh
-./shc -v -r -T -f ocs.sh
 
 cp /root/fornesia87/menu.sh.x /usr/bin/menu
 cp /root/fornesia87/addpptp.sh.x /usr/bin/add-pptp
@@ -346,7 +345,6 @@ cp /root/fornesia87/expiry-change.sh.x /usr/bin/expiry-change
 cp /root/fornesia87/user-limit.sh.x /usr/bin/user-limit
 cp /root/fornesia87/del-user-expire.sh.x /usr/bin/del-user-expired
 cp /root/fornesia87/openvpn.sh.x /usr/bin/install-openvpn
-cp /root/fornesia87/ocs.sh.x /usr/bin/install-ocs
 
 # Download Lain
 cd
@@ -415,8 +413,8 @@ echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "${LRED}Service${NORMAL}"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
-echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 82, 143"  | tee -a log-install.txt
-echo -e "${LGREEN}Dropbear : ${NORMAL}442, 109, 110"  | tee -a log-install.txt
+echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 143, 3128"  | tee -a log-install.txt
+echo -e "${LGREEN}Dropbear : ${NORMAL}80, 109, 110"  | tee -a log-install.txt
 echo -e "${LGREEN}Squid3    : ${NORMAL}8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
 echo -e "${LGREEN}badvpn   : ${NORMAL}badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo -e "${LGREEN}PPTP VPN  : ${NORMAL}Create User via Panel Menu"  | tee -a log-install.txt
