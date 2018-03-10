@@ -178,7 +178,7 @@ cd
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 3128' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/#Banner /etc/issue.net/g' /etc/ssh/sshd_config
 service ssh restart
 
@@ -186,7 +186,7 @@ service ssh restart
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=80/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=3128/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
@@ -413,8 +413,8 @@ echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "${LRED}Service${NORMAL}"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
-echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 143, 3128"  | tee -a log-install.txt
-echo -e "${LGREEN}Dropbear : ${NORMAL}80, 109, 110"  | tee -a log-install.txt
+echo -e "${LGREEN}OpenSSH  : ${NORMAL}22, 143, 80"  | tee -a log-install.txt
+echo -e "${LGREEN}Dropbear : ${NORMAL}3128, 109, 110"  | tee -a log-install.txt
 echo -e "${LGREEN}Squid3    : ${NORMAL}8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
 echo -e "${LGREEN}badvpn   : ${NORMAL}badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo -e "${LGREEN}PPTP VPN  : ${NORMAL}Create User via Panel Menu"  | tee -a log-install.txt
