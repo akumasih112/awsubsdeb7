@@ -1,1 +1,1 @@
-MANA SAYA TAU GAN !!!
+Cara Pakai? Belajar sendiri dong wkwk
