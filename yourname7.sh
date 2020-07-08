@@ -27,7 +27,7 @@ wget -q -O /etc/imd https://raw.githubusercontent.com/akumasih112/code/master/da
 wget -q -O daftarip https://raw.githubusercontent.com/akumasih112/code/master/daftarip.txt
 if ! grep -w -q $MYIP daftarip; then
 	echo "Maaf, hanya IP terdaftar yang bisa menggunakan script ini!"
-	echo "Hubungi Roziq Yusuf (Whatsapp: 081234054359)"
+	echo "Hubungi Roziq Yusuf (Whatsapp: 083822837689)"
 	rm -f /root/daftarip
 	exit
 fi
